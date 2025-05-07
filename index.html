@@ -3,69 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERUMAHAN ISLAMI TERBESAR DAN SATU-SATUNYA DI KUNINGAN 2025</title>
-    <meta name="description" content="DP 0%! Miliki Rumah Syariah + Motor Listrik Gratis di Kuningan. Cicilan Rp1 Juta/Bulan. Lokasi Strategis Dekat Wisata. Booking Fee Rp500rb saja!">
-    <meta name="keywords" content="rumah subsidi syariah kuningan 2025, cicilan rumah 1 juta Kuningan, perumahan Islami tanpa riba, hunian dekat wisata Kuningan">
-    <meta property="og:title" content="PERUMAHAN ISLAMI TERBESAR DI KUNINGAN - DP 0% + Motor Gratis">
-    <meta property="og:description" content="Booking Fee Rp500rb, Cicilan Rp1 Juta/Bulan. Fasilitas Islami Lengkap!">
+    <title>DP 0%! Rumah Syariah + Motor Listrik Gratis di Kuningan | Kertamulya Residence</title>
+    <meta name="description" content="Investasi properti syariah terbaik di Kuningan. DP 0%, cicilan Rp1 juta/bulan, dapatkan motor listrik gratis! Lokasi strategis di kota transit wisata.">
+    <meta name="keywords" content="rumah syariah kuningan, investasi properti 2025, cicilan rumah 1 juta, perumahan islami, hunian dekat wisata">
+    <meta property="og:title" content="DP 0%! Rumah Syariah + Motor Listrik Gratis di Kuningan">
+    <meta property="og:description" content="Booking Fee Rp500rb saja! Cicilan Rp1 juta/bulan. Fasilitas Islami lengkap.">
     <meta property="og:image" content="https://i.imgur.com/EimqXek.jpeg">
     <meta property="og:url" content="https://kertamulyaresidence.com">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
     <style>
-        /* ===== GLOBAL STYLES ===== */
+        /* ===== GLOBAL RESET & VARIABLES ===== */
         :root {
             --gold: #FFD700;
-            --islamic-green: #2E8B57;
-            --sky-blue: #87CEEB;
+            --islamic-green: #228B22;
+            --sky-blue: #00BFFF;
             --white: #FFFFFF;
-            --dark: #333333;
-            --urgent-red: #E74C3C;
+            --black: #111111;
+            --urgent-red: #FF3030;
+            --dark-green: #006400;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+            font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif;
         }
         
         body {
-            background-color: #f9f9f9;
-            color: var(--dark);
+            background-color: #f8f8f8;
+            color: var(--black);
             overflow-x: hidden;
-            position: relative;
+            line-height: 1.6;
         }
         
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.5);
-            z-index: -1;
-            pointer-events: none;
+        /* ===== ANIMATION CLASSES ===== */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         
-        .snowflake {
-            position: fixed;
-            color: var(--sky-blue);
-            font-size: 1em;
-            animation: fall linear infinite;
-            pointer-events: none;
-            z-index: -1;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
         
-        @keyframes fall {
-            0% {
-                transform: translateY(-10vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0;
-            }
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         
         /* ===== HEADER SECTION ===== */
@@ -74,7 +66,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -84,152 +76,113 @@
             padding: 0 20px;
         }
         
-        .hero-content h1 {
-            font-size: 2.8rem;
+        .hero-content {
+            max-width: 1200px;
+            animation: slideIn 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
         }
         
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px var(--white), 0 0 20px var(--white), 0 0 30px var(--gold), 0 0 40px var(--gold);
-            }
-            to {
-                text-shadow: 0 0 20px var(--white), 0 0 30px var(--sky-blue), 0 0 40px var(--islamic-green), 0 0 50px var(--islamic-green);
-            }
-        }
-        
-        .hero-content p {
+        .hero p {
             font-size: 1.5rem;
             margin-bottom: 30px;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         }
         
-        .price-tag {
+        .badge {
+            display: inline-block;
             background-color: var(--urgent-red);
             color: var(--white);
-            display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 25px;
             border-radius: 50px;
             font-weight: bold;
             margin: 20px 0;
             animation: pulse 1.5s infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
-            }
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 15px rgba(231, 76, 60, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
-            }
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
+        /* ===== BUTTON STYLES ===== */
         .btn {
-            padding: 15px 30px;
+            display: inline-block;
+            padding: 18px 36px;
             border-radius: 50px;
             font-weight: bold;
             font-size: 1.1rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            display: inline-block;
+            margin: 10px;
             text-align: center;
             cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn-primary {
-            background-color: var(--gold);
-            color: var(--dark);
-            border: 2px solid var(--gold);
+            background: linear-gradient(45deg, var(--gold), #FFA500);
+            color: var(--black);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
         }
         
         .btn-primary:hover {
-            background-color: transparent;
-            color: var(--gold);
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.6);
+            animation: glow 1.5s infinite alternate;
         }
         
         .btn-secondary {
-            background-color: transparent;
+            background: transparent;
             color: var(--white);
             border: 2px solid var(--white);
         }
         
         .btn-secondary:hover {
             background-color: var(--white);
-            color: var(--dark);
+            color: var(--black);
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
-        .sticky-cta {
+        /* ===== STICKY WHATSAPP BUTTON ===== */
+        .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--islamic-green), var(--sky-blue));
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
             color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
             z-index: 100;
             display: flex;
             align-items: center;
-            animation: bounce 2s infinite;
+            justify-content: center;
+            text-decoration: none;
+            animation: float 3s ease-in-out infinite;
         }
         
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-20px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-        }
-        
+        /* ===== NOTIFICATION SYSTEM ===== */
         .notification {
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: var(--dark);
+            background-color: var(--black);
             color: var(--white);
-            padding: 15px 20px;
-            border-radius: 5px;
+            padding: 15px 25px;
+            border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 100;
+            z-index: 1000;
             display: none;
+            max-width: 350px;
             animation: slideIn 0.5s forwards;
-        }
-        
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
         }
         
         .notification::before {
@@ -237,24 +190,23 @@
             margin-right: 10px;
         }
         
-        /* ===== ABOUT SECTION ===== */
+        /* ===== SECTION STYLES ===== */
         .section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 100px 20px;
+            position: relative;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+            margin-bottom: 60px;
         }
         
         .section-title h2 {
             font-size: 2.5rem;
             color: var(--islamic-green);
+            position: relative;
             display: inline-block;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
         
         .section-title h2::after {
@@ -264,16 +216,20 @@
             left: 50%;
             transform: translateX(-50%);
             width: 100px;
-            height: 3px;
+            height: 4px;
             background: linear-gradient(90deg, var(--gold), var(--islamic-green));
+            border-radius: 2px;
         }
         
+        /* ===== ABOUT SECTION ===== */
         .about-content {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
             align-items: center;
             justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .about-text {
@@ -282,19 +238,15 @@
         }
         
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .about-text p {
-            margin-bottom: 15px;
-            line-height: 1.6;
+            color: var(--dark-green);
+            line-height: 1.3;
         }
         
         .highlight {
-            background-color: rgba(255, 215, 0, 0.2);
-            padding: 2px 5px;
+            background: linear-gradient(120deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1));
+            padding: 0 5px;
             border-radius: 3px;
             font-weight: bold;
         }
@@ -302,9 +254,15 @@
         .about-image {
             flex: 1;
             min-width: 300px;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s ease;
+        }
+        
+        .about-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
         }
         
         .about-image img {
@@ -318,33 +276,54 @@
             transform: scale(1.05);
         }
         
-        /* ===== FEATURES SECTION ===== */
-        .features {
-            background-color: var(--white);
+        /* ===== VIDEO SECTION ===== */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
         
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* ===== FEATURES SECTION ===== */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .feature-card {
             background-color: var(--white);
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         
         .feature-image {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
+            cursor: pointer;
         }
         
         .feature-image img {
@@ -359,7 +338,7 @@
         }
         
         .feature-content {
-            padding: 20px;
+            padding: 25px;
         }
         
         .feature-content h3 {
@@ -368,9 +347,54 @@
             color: var(--islamic-green);
         }
         
-        .feature-content p {
-            color: #666;
-            line-height: 1.6;
+        /* ===== TESTIMONIAL SECTION ===== */
+        .testimonials {
+            background: linear-gradient(135deg, var(--islamic-green), var(--dark-green));
+            color: var(--white);
+        }
+        
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid var(--gold);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--gold);
+            opacity: 0.5;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--gold);
         }
         
         /* ===== GALLERY SECTION ===== */
@@ -378,14 +402,17 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .gallery-item {
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             position: relative;
+            cursor: pointer;
         }
         
         .gallery-item:hover {
@@ -400,6 +427,205 @@
             display: block;
         }
         
+        /* ===== MODAL FOR IMAGE ZOOM ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: zoom 0.3s;
+        }
+        
+        @keyframes zoom {
+            from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+            to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: var(--white);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        /* ===== PRICING SECTION ===== */
+        .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .pricing-card.popular {
+            border: 3px solid var(--gold);
+            position: relative;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--islamic-green);
+            margin: 20px 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .price-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .price-features li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .price-features li::before {
+            content: "✓";
+            color: var(--islamic-green);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* ===== FORM SECTION ===== */
+        .form-container {
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--gold), var(--islamic-green));
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-title h3 {
+            font-size: 1.8rem;
+            color: var(--islamic-green);
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--black);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--islamic-green);
+            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
+            outline: none;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(45deg, var(--islamic-green), var(--sky-blue));
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
         /* ===== FAQ SECTION ===== */
         .faq-container {
             max-width: 800px;
@@ -408,25 +634,36 @@
         
         .faq-item {
             margin-bottom: 15px;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
         .faq-question {
-            background-color: var(--islamic-green);
-            color: var(--white);
-            padding: 15px 20px;
+            background-color: var(--white);
+            color: var(--black);
+            padding: 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: bold;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #f5f5f5;
         }
         
         .faq-question::after {
             content: "+";
             font-size: 1.5rem;
+            color: var(--islamic-green);
         }
         
         .faq-item.active .faq-question::after {
@@ -434,7 +671,7 @@
         }
         
         .faq-answer {
-            background-color: var(--white);
+            background-color: #f9f9f9;
             padding: 0;
             max-height: 0;
             overflow: hidden;
@@ -446,11 +683,11 @@
             max-height: 500px;
         }
         
-        /* ===== FOOTER SECTION ===== */
+        /* ===== FOOTER ===== */
         footer {
-            background-color: var(--dark);
+            background-color: var(--black);
             color: var(--white);
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
         
@@ -476,6 +713,7 @@
         .footer-contact a {
             color: var(--gold);
             text-decoration: none;
+            font-weight: 600;
         }
         
         .footer-contact a:hover {
@@ -487,117 +725,111 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaa;
-        }
-        
-        /* ===== ANIMATIONS ===== */
-        [data-aos] {
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        [data-aos="fade-up"] {
-            transform: translateY(50px);
-        }
-        
-        [data-aos="fade-down"] {
-            transform: translateY(-50px);
-        }
-        
-        [data-aos="fade-left"] {
-            transform: translateX(-50px);
-        }
-        
-        [data-aos="fade-right"] {
-            transform: translateX(50px);
-        }
-        
-        [data-aos].aos-animate {
-            opacity: 1;
-            transform: translate(0);
+            font-size: 0.9rem;
         }
         
         /* ===== RESPONSIVE STYLES ===== */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
+            .hero h1 {
+                font-size: 2.2rem;
             }
             
-            .hero-content p {
+            .hero p {
                 font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 60px 20px;
             }
             
             .section-title h2 {
                 font-size: 2rem;
             }
             
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
             .btn {
+                padding: 15px 25px;
+                font-size: 1rem;
                 width: 100%;
+                margin: 5px 0;
             }
             
-            .sticky-cta {
-                width: 90%;
-                text-align: center;
-                padding: 12px 20px;
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Snowflakes Animation -->
-    <div id="snowflakes-container"></div>
-    
-    <!-- Notification -->
-    <div class="notification" id="notification"></div>
-    
     <!-- Header Section -->
     <header class="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <h1>PERUMAHAN ISLAMI TERBESAR DAN SATU-SATUNYA DI KUNINGAN</h1>
-            <p>DP 0% + Motor Listrik Gratis (STNK & BPKB Included)</p>
-            <div class="price-tag">CICILAN Rp1 JUTA/BULAN</div>
+        <div class="hero-content">
+            <h1>INVESTASI PROPERTI SYARIAH TERBAIK 2025 DI KUNINGAN</h1>
+            <p>DP 0% + Motor Listrik Gratis • Cicilan Rp1 Juta/Bulan • Lokasi Strategis Kota Transit Wisata</p>
+            <div class="badge">Promo Terbatas!</div>
             <div class="cta-buttons">
-                <a href="#details" class="btn btn-primary">LIHAT HARGA SEKARANG</a>
-                <a href="https://wa.me/628977771080?text=Saya%20mau%20booking%20unit%20Kertamulya%20Residence" class="btn btn-secondary">AMBIL UNIT SEKARANG</a>
+                <a href="#pricing" class="btn btn-primary">LIHAT HARGA SEKARANG</a>
+                <a href="#form" class="btn btn-secondary">AMBIL UNIT SEKARANG</a>
             </div>
         </div>
     </header>
-    
-    <!-- Sticky CTA -->
-    <a href="https://wa.me/628977771080?text=Saya%20mau%20booking%20unit%20Kertamulya%20Residence" class="sticky-cta">
-        🚀 AMBIL UNIT SEKARANG - MOTOR GRATIS!
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/628977771080?text=Saya%20tertarik%20dengan%20Kertamulya%20Residence%20dan%20mau%20info%20lebih%20lanjut" class="whatsapp-float" target="_blank">
+        <span style="font-size: 1.5rem;">💬</span>
     </a>
-    
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
     <!-- About Section -->
-    <section class="section" id="details">
-        <div class="section-title" data-aos="fade-up">
-            <h2>KONSEP ISLAMIC GREEN LIVING</h2>
+    <section class="section">
+        <div class="section-title">
+            <h2>KENAPA HARUS KERTAMULYA RESIDENCE?</h2>
         </div>
         <div class="about-content">
-            <div class="about-text" data-aos="fade-right">
-                <h3>Hunian Syariah Pertama di Kuningan</h3>
-                <p>Kertamulya Residence menghadirkan <span class="highlight">konsep perumahan Islami pertama dan satu-satunya di Kuningan</span> yang mengintegrasikan nilai-nilai Islam dalam setiap aspek kehidupan.</p>
-                <p>Dengan <span class="highlight">fasilitas ibadah lengkap</span>, lingkungan yang <span class="highlight">halal dan thayyib</span>, serta sistem keuangan berbasis syariah, kami menawarkan pengalaman hidup yang berbeda.</p>
+            <div class="about-text">
+                <h3>Perumahan Islami Pertama & Satu-satunya di Kuningan</h3>
+                <p>Kertamulya Residence bukan sekadar hunian biasa. Kami menghadirkan <span class="highlight">konsep Islamic Green Living pertama di Kuningan</span> yang mengintegrasikan nilai-nilai Islam dalam setiap aspek kehidupan.</p>
+                <p>Dengan lokasi strategis di jantung kota transit wisata Kuningan, properti ini menjadi <span class="highlight">investasi masa depan yang menjanjikan</span>. Hanya 5 menit ke Tol Kuningan dan dikelilingi oleh objek wisata terkenal:</p>
+                <ul style="margin: 20px 0; padding-left: 20px;">
+                    <li>Telaga Biru Cicerem (3 km)</li>
+                    <li>Curug Putri Palutungan (5 km)</li>
+                    <li>Taman Nasional Gunung Ciremai (15 km)</li>
+                </ul>
                 <p><strong>Spesial 2025:</strong> Booking fee hanya <span class="highlight">Rp500.000</span> dan dapatkan <span class="highlight">motor listrik gratis</span> untuk 100 pembeli pertama!</p>
             </div>
-            <div class="about-image" data-aos="fade-left">
+            <div class="about-image">
                 <img src="https://i.imgur.com/50dsrpB.png" alt="Masjid Kertamulya Residence">
             </div>
         </div>
     </section>
-    
+
+    <!-- Video Section -->
+    <section class="section" style="background-color: #f0f8ff;">
+        <div class="section-title">
+            <h2>VIDEO PROFIL KERTAMULYA RESIDENCE</h2>
+        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/6G_1fBYL18k?si=hksogSZiklBTXq5o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
     <!-- Features Section -->
-    <section class="section features">
-        <div class="section-title" data-aos="fade-up">
-            <h2>FASILITAS UNGGULAN</h2>
+    <section class="section">
+        <div class="section-title">
+            <h2>FASILITAS PREMIUM ISLAMI</h2>
         </div>
         <div class="features-grid">
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="feature-image">
+            <div class="feature-card">
+                <div class="feature-image" onclick="openModal('https://i.imgur.com/AAHKvFo.png')">
                     <img src="https://i.imgur.com/AAHKvFo.png" alt="One Gate System">
                 </div>
                 <div class="feature-content">
@@ -605,8 +837,8 @@
                     <p>Sistem keamanan terpadu dengan akses tunggal, CCTV cerdas, dan patroli keamanan 24 jam untuk kenyamanan maksimal.</p>
                 </div>
             </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-image">
+            <div class="feature-card">
+                <div class="feature-image" onclick="openModal('https://i.imgur.com/774IQMD.png')">
                     <img src="https://i.imgur.com/774IQMD.png" alt="Saung Tahfidz">
                 </div>
                 <div class="feature-content">
@@ -614,8 +846,8 @@
                     <p>Area khusus untuk menghafal Al-Qur'an dengan metode modern dan guru tahfidz bersertifikat.</p>
                 </div>
             </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-image">
+            <div class="feature-card">
+                <div class="feature-image" onclick="openModal('https://i.imgur.com/m5BNXgh.png')">
                     <img src="https://i.imgur.com/m5BNXgh.png" alt="Sunnah Sport">
                 </div>
                 <div class="feature-content">
@@ -623,213 +855,101 @@
                     <p>Lapangan panahan, kolam renang khusus muslimah, dan fasilitas olahraga sesuai sunnah Nabi.</p>
                 </div>
             </div>
+            <div class="feature-card">
+                <div class="feature-image" onclick="openModal('https://imgur.com/qV7lf7s')">
+                    <img src="https://imgur.com/qV7lf7s" alt="Community Center">
+                </div>
+                <div class="feature-content">
+                    <h3>Community Center</h3>
+                    <p>Tempat berkumpul dan bersosialisasi antar penghuni dengan konsep islami dan fasilitas lengkap.</p>
+                </div>
+            </div>
         </div>
     </section>
-    
+
+    <!-- Testimonial Section -->
+    <section class="section testimonials">
+        <div class="section-title">
+            <h2 style="color: var(--white);">APA KATA MEREKA?</h2>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial" class="testimonial-avatar">
+                <div class="testimonial-text">
+                    "Sebagai investor properti, saya melihat potensi besar di Kertamulya Residence. Lokasi strategis di kota transit wisata membuat nilai properti pasti naik. Fasilitas islaminya juga jadi nilai tambah besar."
+                </div>
+                <div class="testimonial-author">- Bapak Andi, Investor dari Jakarta</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonial" class="testimonial-avatar">
+                <div class="testimonial-text">
+                    "Saya memilih Kertamulya Residence karena konsep islaminya. Anak-anak bisa tumbuh di lingkungan yang baik dengan fasilitas tahfidz dan olahraga sunnah. Harga cicilannya juga sangat terjangkau."
+                </div>
+                <div class="testimonial-author">- Ibu Siti, Keluarga Muda dari Bandung</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonial Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>TESTIMONI ASLI PENGHUNI</h2>
+        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/erR1mNlCHl0?si=j_cw3NUSABRFCNmD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
     <!-- Gallery Section -->
     <section class="section">
-        <div class="section-title" data-aos="fade-up">
-            <h2>GALERI RUMAH TYPE 30/60</h2>
+        <div class="section-title">
+            <h2>GALERI RUMAH TIPE STANDAR 30/60</h2>
         </div>
         <div class="gallery">
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="gallery-item" onclick="openModal('https://i.imgur.com/vv4200Y.jpeg')">
                 <img src="https://i.imgur.com/vv4200Y.jpeg" alt="Rumah Kertamulya Residence">
             </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="gallery-item" onclick="openModal('https://i.imgur.com/JKpZ6YT.jpeg')">
                 <img src="https://i.imgur.com/JKpZ6YT.jpeg" alt="Rumah Kertamulya Residence">
             </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="gallery-item" onclick="openModal('https://i.imgur.com/NXt5lhy.jpeg')">
                 <img src="https://i.imgur.com/NXt5lhy.jpeg" alt="Rumah Kertamulya Residence">
             </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="gallery-item" onclick="openModal('https://i.imgur.com/yCkpfGP.jpeg')">
                 <img src="https://i.imgur.com/yCkpfGP.jpeg" alt="Rumah Kertamulya Residence">
             </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="gallery-item" onclick="openModal('https://i.imgur.com/kN5ddyp.jpeg')">
                 <img src="https://i.imgur.com/kN5ddyp.jpeg" alt="Rumah Kertamulya Residence">
             </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+            <div class="gallery-item" onclick="openModal('https://i.imgur.com/mF6vSAW.jpeg')">
                 <img src="https://i.imgur.com/mF6vSAW.jpeg" alt="Rumah Kertamulya Residence">
             </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="700">
+            <div class="gallery-item" onclick="openModal('https://i.imgur.com/1kPFyfK.jpeg')">
                 <img src="https://i.imgur.com/1kPFyfK.jpeg" alt="Rumah Kertamulya Residence">
             </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="800">
+            <div class="gallery-item" onclick="openModal('https://i.imgur.com/igMpGiN.jpeg')">
                 <img src="https://i.imgur.com/igMpGiN.jpeg" alt="Spesifikasi Bangunan">
             </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="900">
+            <div class="gallery-item" onclick="openModal('https://i.imgur.com/jkniEss.jpeg')">
                 <img src="https://i.imgur.com/jkniEss.jpeg" alt="Denah Rumah">
             </div>
         </div>
     </section>
-    
-    <!-- FAQ Section -->
-    <section class="section">
-        <div class="section-title" data-aos="fade-up">
-            <h2>PERTANYAAN UMUM</h2>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <div class="section-title">
+            <h2>HARGA & PROMO SPESIAL</h2>
         </div>
-        <div class="faq-container">
-            <div class="faq-item" data-aos="fade-up">
-                <div class="faq-question">Bagaimana sistem pembayaran DP 0% ini?</div>
-                <div class="faq-answer">
-                    <p>Anda hanya perlu membayar booking fee Rp500.000 untuk mengamankan unit. Pembayaran selanjutnya dapat diangsur mulai Rp1 juta per bulan melalui pembiayaan syariah kami yang bebas riba.</p>
-                </div>
-            </div>
-            <div class="faq-item" data-aos="fade-up">
-                <div class="faq-question">Benarkah motor listrik gratis termasuk STNK dan BPKB?</div>
-                <div class="faq-answer">
-                    <p>Benar! Motor listrik dengan kapasitas 500W akan kami berikan secara gratis termasuk STNK dan BPKB atas nama pembeli. Syarat dan ketentuan berlaku.</p>
-                </div>
-            </div>
-            <div class="faq-item" data-aos="fade-up">
-                <div class="faq-question">Apa keunggulan lokasi Kertamulya Residence?</div>
-                <div class="faq-answer">
-                    <p>Lokasi strategis di pusat kota Kuningan, dekat dengan berbagai objek wisata seperti Telaga Biru Cicerem (3 km), Curug Putri Palutungan (5 km), dan Taman Nasional Gunung Ciremai (15 km).</p>
-                </div>
-            </div>
-            <div class="faq-item" data-aos="fade-up">
-                <div class="faq-question">Kapan rumah bisa ditempati?</div>
-                <div class="faq-answer">
-                    <p>Proyek tahap 1 akan selesai dan siap huni pada Q2 2025. Pembangunan saat ini sudah mencapai 70% progress.</p>
-                </div>
-            </div>
-            <div class="faq-item" data-aos="fade-up">
-                <div class="faq-question">Apakah ada biaya tersembunyi?</div>
-                <div class="faq-answer">
-                    <p>Tidak ada! Harga yang kami tawarkan sudah termasuk biaya AJB, IMB, SHM, sambungan listrik dan air. Tidak ada biaya tambahan lainnya.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Final CTA Section -->
-    <section class="section" style="background: linear-gradient(135deg, var(--islamic-green), var(--sky-blue)); color: white; text-align: center;">
-        <div data-aos="fade-up">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">JANGAN TUNDA LAGI!</h2>
-            <p style="font-size: 1.5rem; margin-bottom: 30px;">Motor listrik gratis hanya untuk 100 pembeli pertama. Kuota tersisa: <span id="remaining-units" style="font-weight: bold; font-size: 2rem;">27</span> unit!</p>
-            <a href="https://wa.me/628977771080?text=Saya%20mau%20booking%20unit%20Kertamulya%20Residence" class="btn" style="background-color: var(--gold); color: var(--dark); font-size: 1.2rem; padding: 15px 40px;">AMBIL PROMO SEKARANG</a>
-        </div>
-    </section>
-    
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">KERTAMULYA RESIDENCE</div>
-            <div class="footer-contact">
-                <p>Kantor Marketing:</p>
-                <p>Jalan Kertayasa, Blok Congkleng, Kertayasa, Kec. Sindangagung, Kabupaten Kuningan, Jawa Barat 45573</p>
-                <p>Telp: <a href="tel:02328911529">(0232) 8911529</a></p>
-                <p>WhatsApp: <a href="https://wa.me/628977771080">0897-7771-080</a></p>
-                <p>Email: <a href="mailto:marketing@bumimuliaproperty.com">marketing@bumimuliaproperty.com</a></p>
-            </div>
-            <div class="copyright">
-                &copy; 2025 Kertamulya Residence. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // Snowflakes Animation
-        function createSnowflakes() {
-            const container = document.getElementById('snowflakes-container');
-            const snowflakesCount = 30;
-            
-            for (let i = 0; i < snowflakesCount; i++) {
-                const snowflake = document.createElement('div');
-                snowflake.classList.add('snowflake');
-                snowflake.innerHTML = '❄';
-                
-                // Random properties
-                const size = Math.random() * 0.8 + 0.2;
-                const posX = Math.random() * 100;
-                const delay = Math.random() * 5;
-                const duration = Math.random() * 10 + 5;
-                
-                snowflake.style.left = `${posX}%`;
-                snowflake.style.fontSize = `${size}em`;
-                snowflake.style.animationDelay = `${delay}s`;
-                snowflake.style.animationDuration = `${duration}s`;
-                
-                container.appendChild(snowflake);
-            }
-        }
-        
-        // Notification System
-        const messages = [
-            "Bapak Andi (Jakarta) baru saja booking unit Cluster Timur!",
-            "Ibu Siti (Bandung) mengambil promo motor listrik gratis!",
-            "2 unit Cluster Barat terjual dalam 15 menit terakhir!",
-            "Kuota motor gratis tersisa 27 unit!",
-            "Bapak Rudi (Cirebon) memesan via WhatsApp 5 menit yang lalu!"
-        ];
-        
-        function showNotification() {
-            const notification = document.getElementById('notification');
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            
-            notification.textContent = randomMessage;
-            notification.style.display = 'block';
-            
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 5000);
-        }
-        
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentNode;
-                item.classList.toggle('active');
-                
-                // Close other items
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-            });
-        });
-        
-        // Remaining Units Counter
-        function updateRemainingUnits() {
-            const unitsElement = document.getElementById('remaining-units');
-            let units = parseInt(unitsElement.textContent);
-            
-            if (units > 0) {
-                const randomDecrement = Math.floor(Math.random() * 2) + 0; // 0 or 1
-                units = Math.max(0, units - randomDecrement);
-                unitsElement.textContent = units;
-            }
-            
-            setTimeout(updateRemainingUnits, 30000); // Update every 30 seconds
-        }
-        
-        // Scroll Animation
-        function initAOS() {
-            const elements = document.querySelectorAll('[data-aos]');
-            
-            function checkPosition() {
-                elements.forEach(element => {
-                    const position = element.getBoundingClientRect();
-                    
-                    // If element is in viewport
-                    if (position.top < window.innerHeight * 0.75) {
-                        element.classList.add('aos-animate');
-                    }
-                });
-            }
-            
-            window.addEventListener('scroll', checkPosition);
-            window.addEventListener('load', checkPosition);
-            checkPosition(); // Initial check
-        }
-        
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            createSnowflakes();
-            setInterval(showNotification, 15000); // Show notification every 15 seconds
-            updateRemainingUnits();
-            initAOS();
-        });
-    </script>
-</body>
-</html>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Type 30/60</h3>
+                <div class="price">Rp185<span> Juta</span></div>
+                <ul class="price-features">
+                    <li>Luas Tanah 60m²</li>
+                    <li>Bangunan 30m²</li>
+                    <li>2 Kamar Tidur</li>
+                    <li>1 Kamar Mandi</li>
+                    <li>Ruang Tamu & Keluarga</li>
+                </ul>
+                <a href="#form" class="btn btn-primary">MINAT UNIT
