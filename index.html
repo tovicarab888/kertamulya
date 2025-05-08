@@ -5,21 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🔥 DP 0% Rumah Syariah Kuningan + Motor Gratis | Cicilan 1 Juta/Bulan</title>
     <meta name="description" content="Anak Muda Bisa Punya Rumah! DP 0%, Cicilan Rp1 Juta/Bulan. Dapatkan Motor Listrik Setelah Angsuran ke-6. Lokasi Strategis Kota Transit Wisata Kuningan.">
+    <!-- Preload Assets -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" as="style">
     <!-- Font Awesome 6.4.2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        /* ===== LOADING SCREEN ===== */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-logo {
+            width: 150px;
+            margin-bottom: 30px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .loading-bar {
+            width: 300px;
+            height: 10px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .loading-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: #fff;
+            border-radius: 10px;
+            animation: loading 2s forwards;
+        }
+        
+        @keyframes loading {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        
         /* ===== VARIABEL & RESET ===== */
         :root {
             --hijau: #2ecc71;
             --hijau-tua: #27ae60;
+            --hijau-muda: #d5f8e5;
             --emas: #f1c40f;
             --merah: #e74c3c;
             --biru: #3498db;
             --hitam: #2c3e50;
             --putih: #ffffff;
             --abu: #ecf0f1;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         * {
@@ -57,6 +111,21 @@
         @keyframes glow {
             0% { text-shadow: 0 0 10px var(--emas); }
             100% { text-shadow: 0 0 20px var(--hijau); }
+        }
+        
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        
+        @keyframes notificationSlide {
+            0% { transform: translateX(100%); }
+            10% { transform: translateX(0); }
+            90% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
         }
         
         /* ===== UTILITY CLASSES ===== */
@@ -135,11 +204,22 @@
             overflow: hidden;
         }
         
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(46, 204, 113, 0.3), rgba(241, 196, 15, 0.3));
+            z-index: 1;
+            opacity: 0.5;
+        }
+        
         .hero-content {
             position: relative;
             z-index: 2;
             text-align: center;
-            animation: fadeIn 1s ease-out;
         }
         
         .hero h1 {
@@ -148,7 +228,6 @@
             margin-bottom: 20px;
             line-height: 1.2;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            animation: glow 2s infinite alternate;
         }
         
         .hero p {
@@ -200,25 +279,85 @@
             margin-top: 40px;
         }
         
-        /* ===== NOTIFICATION ===== */
-        .notification {
+        /* ===== SOCIAL PROOF ===== */
+        .social-proof {
+            background: rgba(0,0,0,0.5);
+            padding: 15px 25px;
+            border-radius: 50px;
+            margin: 30px auto 0;
+            max-width: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .social-proof-item {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .social-proof-item i {
+            margin-right: 8px;
+            color: var(--emas);
+            font-size: 1.2rem;
+        }
+        
+        /* ===== NOTIFICATION SYSTEM ===== */
+        .notification-container {
             position: fixed;
             top: 20px;
             right: 20px;
+            z-index: 1000;
+            max-width: 350px;
+        }
+        
+        .notification {
             background-color: var(--hitam);
             color: var(--putih);
             padding: 15px 25px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
+            margin-bottom: 15px;
             display: none;
-            max-width: 350px;
-            animation: fadeIn 0.5s forwards;
+            animation: notificationSlide 5s forwards;
+            position: relative;
+            overflow: hidden;
         }
         
         .notification::before {
-            content: "🔥";
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--hijau);
+        }
+        
+        .notification-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .notification-header i {
+            color: var(--emas);
             margin-right: 10px;
+        }
+        
+        .notification-name {
+            font-weight: 700;
+            color: var(--emas);
+        }
+        
+        .notification-time {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-left: auto;
         }
         
         /* ===== WHATSAPP FLOAT ===== */
@@ -240,6 +379,23 @@
             justify-content: center;
             text-decoration: none;
             animation: float 3s ease-in-out infinite;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+        
+        .whatsapp-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #25D366;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            animation: pulse 2s infinite;
         }
         
         /* ===== VIDEO CONTAINER ===== */
@@ -249,8 +405,9 @@
             height: 0;
             overflow: hidden;
             border-radius: 15px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow);
             margin: 40px auto;
+            background: #000;
         }
         
         .video-container iframe {
@@ -274,8 +431,9 @@
             background-color: var(--putih);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .feature-card:hover {
@@ -286,7 +444,7 @@
         .feature-image {
             height: 220px;
             overflow: hidden;
-            cursor: pointer;
+            position: relative;
         }
         
         .feature-image img {
@@ -300,6 +458,19 @@
             transform: scale(1.1);
         }
         
+        .feature-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--hijau);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+        
         .feature-content {
             padding: 25px;
         }
@@ -308,13 +479,100 @@
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--hijau-tua);
+            display: flex;
+            align-items: center;
         }
+        
+        .feature-content h3 i {
+            margin-right: 10px;
+            color: var(--emas);
+        }
+        
+        /* ===== MOTOR PROMO SECTION ===== */
+        .motor-promo {
+            background: linear-gradient(135deg, var(--hijau-muda), var(--putih));
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .motor-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .motor-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .motor-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .motor-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        
+        .motor-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--hijau-tua);
+        }
+        
+        .motor-steps {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .motor-steps li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .motor-steps li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--hijau);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .motor-steps li:nth-child(1)::before { content: "1"; }
+        .motor-steps li:nth-child(2)::before { content: "2"; }
+        .motor-steps li:nth-child(3)::before { content: "3"; }
+        .motor-steps li:nth-child(4)::before { content: "4"; }
         
         /* ===== COMPARISON SECTION ===== */
         .comparison {
             background: linear-gradient(135deg, var(--hitam), #34495e);
             color: var(--putih);
             padding: 80px 0;
+        }
+        
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 50px;
         }
         
         .comparison-cards {
@@ -332,6 +590,7 @@
             transition: all 0.3s ease;
             position: relative;
             color: var(--hitam);
+            box-shadow: var(--shadow);
         }
         
         .comparison-card.best {
@@ -353,6 +612,17 @@
             border-radius: 50px;
             font-weight: 700;
             font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .comparison-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--hijau);
+        }
+        
+        .comparison-card.best .comparison-icon {
+            color: var(--emas);
         }
         
         .comparison-price {
@@ -371,6 +641,7 @@
             margin-bottom: 15px;
             position: relative;
             padding-left: 30px;
+            font-size: 1.1rem;
         }
         
         .comparison-features li::before {
@@ -385,9 +656,14 @@
             color: var(--emas);
         }
         
+        .comparison-features li.cross::before {
+            content: "✗";
+            color: var(--merah);
+        }
+        
         /* ===== TESTIMONIAL SECTION ===== */
         .testimonials {
-            background: url('https://imgur.com/lE2ropc') center/cover;
+            background: url('https://i.imgur.com/lE2ropc.jpeg') center/cover;
             position: relative;
             padding: 100px 0;
         }
@@ -427,6 +703,12 @@
             object-fit: cover;
             margin: 0 auto 20px;
             border: 3px solid var(--emas);
+            background: var(--abu);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--hijau-tua);
         }
         
         .testimonial-text {
@@ -447,6 +729,46 @@
         .testimonial-author {
             font-weight: 700;
             color: var(--emas);
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            display: block;
+        }
+        
+        /* ===== PROGRESS SECTION ===== */
+        .progress-section {
+            background: var(--putih);
+            padding: 80px 0;
+        }
+        
+        .progress-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .progress-card {
+            background: var(--abu);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .progress-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--hijau);
+            margin-bottom: 15px;
+        }
+        
+        .progress-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--hijau-tua);
         }
         
         /* ===== FORM SECTION ===== */
@@ -510,6 +832,26 @@
             outline: none;
         }
         
+        .form-submit {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, var(--hijau), var(--hijau-tua));
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.6);
+        }
+        
         /* ===== COUNTDOWN SECTION ===== */
         .countdown-section {
             background: linear-gradient(135deg, var(--merah), #c0392b);
@@ -523,11 +865,25 @@
             margin: 0 auto;
         }
         
+        .countdown-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .countdown-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
         #countdown {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin: 40px 0;
+            flex-wrap: wrap;
         }
         
         .countdown-box {
@@ -535,6 +891,7 @@
             padding: 20px;
             border-radius: 10px;
             min-width: 100px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .countdown-value {
@@ -544,6 +901,12 @@
         
         .countdown-label {
             font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .countdown-note {
+            margin-top: 30px;
+            font-size: 0.9rem;
             opacity: 0.8;
         }
         
@@ -561,6 +924,28 @@
         
         .footer-logo img {
             max-width: 200px;
+        }
+        
+        .footer-social {
+            margin-bottom: 30px;
+        }
+        
+        .footer-social a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            line-height: 50px;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background: var(--hijau);
+            transform: translateY(-5px);
         }
         
         .footer-contact {
@@ -592,6 +977,14 @@
             
             .section {
                 padding: 80px 0;
+            }
+            
+            .motor-container {
+                flex-direction: column;
+            }
+            
+            .motor-content {
+                text-align: center;
             }
         }
         
@@ -653,17 +1046,34 @@
             }
             
             #countdown {
-                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .countdown-box {
+                min-width: 70px;
+                padding: 15px 10px;
+            }
+            
+            .countdown-value {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <img src="https://i.imgur.com/rb9n5Ge.png" alt="Kertamulya Residence" class="loading-logo">
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
     <!-- Header Section -->
     <header class="hero">
         <div class="container">
-            <div class="hero-content">
-                <img src="https://imgur.com/rb9n5Ge" alt="Kertamulya Residence" style="max-width: 200px; margin-bottom: 30px;">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <img src="https://i.imgur.com/rb9n5Ge.png" alt="Kertamulya Residence" style="max-width: 200px; margin-bottom: 30px;">
                 <h1>ANAK MUDA BISA PUNYA RUMAH!<br><span style="color: var(--emas);">DP 0%</span> + Motor Listrik GRATIS</h1>
                 <p>Cicilan <span style="font-weight: 700;">Rp1 Juta/Bulan</span> - Lokasi Strategis Kota Transit Wisata Kuningan</p>
                 
@@ -679,39 +1089,42 @@
                     <a href="#fasilitas" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;"><i class="fas fa-info-circle"></i> LIHAT FASILITAS</a>
                 </div>
                 
-                <div style="margin-top: 40px;">
-                    <div class="testimonial">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimoni" class="testimonial-avatar">
-                        <div class="testimonial-text">
-                            "Gak nyangka di usia 25 udah punya rumah! Cicilan lebih murah dari kos, fasilitasnya keren banget."
-                        </div>
-                        <div class="testimonial-author">- Andi, Freelancer Digital</div>
+                <div class="social-proof">
+                    <div class="social-proof-item">
+                        <i class="fas fa-check-circle"></i> 250+ Rumah Terjual
+                    </div>
+                    <div class="social-proof-item">
+                        <i class="fas fa-star"></i> 4.9/5 (128 Reviews)
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer">
+        <!-- Notifications will be added here by JavaScript -->
+    </div>
+
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/628977771080?text=Saya%20tertarik%20Kertamulya%20Residence%20dan%20mau%20info%20lebih%20lanjut" class="whatsapp-float" target="_blank">
+        <div class="whatsapp-pulse"></div>
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <!-- Notification -->
-    <div class="notification" id="notification"></div>
 
     <!-- Video Intro Section -->
     <section class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
                 <h2>KENAPA HARUS KERTAMULYA RESIDENCE?</h2>
+                <p>Perumahan Syariah Pertama di Kuningan dengan Konsep Green Living</p>
             </div>
             
-            <div class="video-container">
+            <div class="video-container" data-aos="fade-up" data-aos-delay="200">
                 <iframe src="https://player.vimeo.com/video/1082437245?h=207debc4dc&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Video Intro KMR"></iframe>
             </div>
             
-            <div style="text-align: center; margin-top: 40px;">
+            <div style="text-align: center; margin-top: 40px;" data-aos="fade-up" data-aos-delay="400">
                 <a href="#form" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Saya Mau Info Lebih Lanjut</a>
             </div>
         </div>
@@ -720,76 +1133,103 @@
     <!-- Facilities Section -->
     <section class="section" id="fasilitas">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
                 <h2>FASILITAS PREMIUM</h2>
                 <p>Konsep Islamic Green Living Pertama di Kuningan</p>
             </div>
             
             <div class="features-grid">
                 <!-- Fasilitas 1 -->
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-image">
-                        <img src="https://imgur.com/QJfJq2l" alt="Masjid Al Fawwaz">
+                        <img src="https://i.imgur.com/QJfJq2l.jpeg" alt="Masjid Al Fawwaz" loading="lazy">
+                        <div class="feature-badge">Fasilitas Unggulan</div>
                     </div>
                     <div class="feature-content">
                         <h3><i class="fas fa-mosque"></i> Masjid Al Fawwaz</h3>
-                        <p>Kapasitas 300 jamaah dengan desain modern dan tempat wudhu nyaman</p>
+                        <p>Kapasitas 300 jamaah dengan desain modern dan tempat wudhu nyaman. Dilengkapi sound system berkualitas dan pendingin ruangan.</p>
                     </div>
                 </div>
                 
                 <!-- Fasilitas 2 -->
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-image">
-                        <img src="https://imgur.com/Fc4wxey" alt="Saung Tahfidz">
+                        <img src="https://i.imgur.com/Fc4wxey.jpeg" alt="Saung Tahfidz" loading="lazy">
                     </div>
                     <div class="feature-content">
                         <h3><i class="fas fa-book-quran"></i> Saung Tahfidz</h3>
-                        <p>Tempat menghafal Al-Qur'an dengan metode modern dan guru bersertifikat</p>
+                        <p>Tempat menghafal Al-Qur'an dengan metode modern dan guru bersertifikat. Program tahfidz untuk anak dan dewasa dengan sistem sanad.</p>
                     </div>
                 </div>
                 
                 <!-- Fasilitas 3 -->
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-image">
-                        <img src="https://imgur.com/QwwyO9T" alt="Sunnah Sport">
+                        <img src="https://i.imgur.com/QwwyO9T.jpeg" alt="Sunnah Sport" loading="lazy">
                     </div>
                     <div class="feature-content">
                         <h3><i class="fas fa-bowling-ball"></i> Sunnah Sport</h3>
-                        <p>Lapangan panahan, kolam renang muslimah, dan area olahraga sunnah</p>
+                        <p>Lapangan panahan, kolam renang muslimah, dan area olahraga sunnah. Dilengkapi dengan trainer profesional dan peralatan standar.</p>
                     </div>
                 </div>
                 
                 <!-- Fasilitas 4 -->
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-image">
-                        <img src="https://imgur.com/fjZalPE" alt="Community Center">
+                        <img src="https://i.imgur.com/fjZalPE.jpeg" alt="Community Center" loading="lazy">
                     </div>
                     <div class="feature-content">
                         <h3><i class="fas fa-users"></i> Community Center</h3>
-                        <p>Tempat berkumpul keluarga dengan cafe dan ruang serbaguna</p>
+                        <p>Tempat berkumpul keluarga dengan cafe halal dan ruang serbaguna. Digunakan untuk pengajian, seminar, dan acara komunitas.</p>
                     </div>
                 </div>
                 
                 <!-- Fasilitas 5 -->
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="feature-image">
-                        <img src="https://imgur.com/DLAHtSG" alt="Green House">
+                        <img src="https://i.imgur.com/DLAHtSG.jpeg" alt="Green House" loading="lazy">
                     </div>
                     <div class="feature-content">
                         <h3><i class="fas fa-leaf"></i> Green House</h3>
-                        <p>Area hijau dengan tanaman produktif untuk ketahanan pangan penghuni</p>
+                        <p>Area hijau dengan tanaman produktif untuk ketahanan pangan penghuni. Sistem pertanian urban dengan pembagian hasil panen.</p>
                     </div>
                 </div>
                 
                 <!-- Fasilitas 6 -->
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="feature-image">
-                        <img src="https://imgur.com/undefined" alt="Playground">
+                        <img src="https://i.imgur.com/lE2ropc.jpeg" alt="Playground" loading="lazy">
                     </div>
                     <div class="feature-content">
                         <h3><i class="fas fa-child"></i> Playground</h3>
-                        <p>Area bermain anak dengan permainan edukatif dan aman</p>
+                        <p>Area bermain anak dengan permainan edukatif dan aman. Dilengkapi rubber flooring dan pengawasan keamanan 24 jam.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motor Promo Section -->
+    <section class="motor-promo">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>MOTOR LISTRIK GRATIS</h2>
+                <p>Dapatkan motor listrik gratis setelah angsuran ke-6</p>
+            </div>
+            
+            <div class="motor-container">
+                <div class="motor-image" data-aos="fade-right">
+                    <img src="https://i.imgur.com/EimqXek.jpeg" alt="Motor Listrik Gratis" loading="lazy">
+                </div>
+                <div class="motor-content" data-aos="fade-left">
+                    <h3>Spesifikasi Motor Listrik</h3>
+                    <ul class="motor-steps">
+                        <li>Jarak tempuh 60km dengan sekali charge</li>
+                        <li>Kecepatan maksimal 60km/jam</li>
+                        <li>Baterai tahan 3 tahun dengan garansi resmi</li>
+                        <li>Waktu charge hanya 4 jam</li>
+                    </ul>
+                    <p style="font-weight: 600; color: var(--hijau-tua);">*Syarat dan ketentuan berlaku</p>
                 </div>
             </div>
         </div>
@@ -798,51 +1238,63 @@
     <!-- Comparison Section -->
     <section class="comparison">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
                 <h2 style="color: var(--putih);">BANDINGKAN PILIHAN ANDA</h2>
                 <p style="color: rgba(255,255,255,0.8);">Lebih baik miliki aset daripada uang hangus setiap bulan</p>
             </div>
             
             <div class="comparison-cards">
                 <!-- Option 1 -->
-                <div class="comparison-card">
+                <div class="comparison-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="comparison-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
                     <h3>NGEKOS DI KUNINGAN</h3>
                     <div class="comparison-price">Rp800rb/bln</div>
                     <ul class="comparison-features">
-                        <li>1 Kamar kecil</li>
-                        <li>Dapur dan kamar mandi sharing</li>
-                        <li>Tidak ada ruang tamu</li>
-                        <li>Uang hangus setiap bulan</li>
-                        <li>Tidak ada aset</li>
+                        <li class="cross">1 Kamar kecil (3x3m)</li>
+                        <li class="cross">Dapur dan kamar mandi sharing</li>
+                        <li class="cross">Tidak ada ruang tamu</li>
+                        <li class="cross">Uang hangus setiap bulan</li>
+                        <li class="cross">Tidak ada aset</li>
+                        <li class="cross">Tidak ada kenaikan nilai</li>
                     </ul>
                     <div style="height: 50px;"></div>
                 </div>
                 
                 <!-- Option 2 (Best) -->
-                <div class="comparison-card best">
+                <div class="comparison-card best" data-aos="fade-up" data-aos-delay="200">
                     <div class="best-badge">PALING MENGUNTUNGKAN</div>
+                    <div class="comparison-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
                     <h3>KERTAMULYA RESIDENCE</h3>
                     <div class="comparison-price">Rp1jt/bln</div>
                     <ul class="comparison-features">
-                        <li>2 Kamar tidur</li>
+                        <li>2 Kamar tidur (3x3m & 3x4m)</li>
                         <li>Ruang tamu + dapur pribadi</li>
                         <li>Teras depan dan belakang</li>
                         <li>Nilai properti naik 20%/tahun</li>
                         <li>Dapat motor listrik gratis</li>
+                        <li>Fasilitas premium islami</li>
                     </ul>
                     <a href="#form" class="btn" style="background: var(--emas); color: var(--hitam); width: 100%; margin-top: 20px;">AMBIL PROMO</a>
                 </div>
                 
                 <!-- Option 3 -->
-                <div class="comparison-card">
+                <div class="comparison-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="comparison-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
                     <h3>RUMAH BIASA</h3>
                     <div class="comparison-price">Rp3jt/bln</div>
                     <ul class="comparison-features">
-                        <li>DP minimal 30% (Rp50-100jt)</li>
-                        <li>Lokasi kurang strategis</li>
-                        <li>Tidak ada fasilitas islami</li>
-                        <li>Biaya perawatan tinggi</li>
-                        <li>Kenaikan nilai lambat</li>
+                        <li class="cross">DP minimal 30% (Rp50-100jt)</li>
+                        <li class="cross">Lokasi kurang strategis</li>
+                        <li class="cross">Tidak ada fasilitas islami</li>
+                        <li class="cross">Biaya perawatan tinggi</li>
+                        <li class="cross">Kenaikan nilai lambat</li>
+                        <li class="cross">Tidak ada bonus motor</li>
                     </ul>
                     <div style="height: 50px;"></div>
                 </div>
@@ -850,21 +1302,74 @@
         </div>
     </section>
 
+    <!-- Progress Section -->
+    <section class="progress-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>PROGRESS PEMBANGUNAN</h2>
+                <p>Lebih dari 80% unit sudah terbangun dan siap huni</p>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="progress-number">250+</div>
+                    <div class="progress-title">Unit Terjual</div>
+                    <p>Lebih dari 250 keluarga sudah bergabung di Kertamulya Residence</p>
+                </div>
+                
+                <div class="progress-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="progress-number">80%</div>
+                    <div class="progress-title">Progress Pembangunan</div>
+                    <p>Pembangunan tahap akhir dengan kualitas terjamin</p>
+                </div>
+                
+                <div class="progress-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="progress-number">100+</div>
+                    <div class="progress-title">Motor Terbagikan</div>
+                    <p>Sudah lebih dari 100 motor listrik diberikan kepada pembeli</p>
+                </div>
+            </div>
+            
+            <div class="video-container" style="margin-top: 50px;" data-aos="fade-up">
+                <iframe src="https://player.vimeo.com/video/1082436369?h=baee7d7512&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Progress Pembangunan Video"></iframe>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonial Section -->
     <section class="testimonials">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
                 <h2 style="color: var(--putih);">APA KATA MEREKA?</h2>
                 <p style="color: rgba(255,255,255,0.8);">Testimoni asli dari penghuni Kertamulya Residence</p>
             </div>
             
             <div class="testimonial-slider">
                 <!-- Testimonial 1 -->
-                <div class="testimonial">
+                <div class="testimonial" data-aos="fade-up">
                     <div class="video-container">
                         <iframe src="https://player.vimeo.com/video/1082431787?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Testimonial"></iframe>
                     </div>
                     <div class="testimonial-author">- Bapak Ahmad, Pensiunan PNS</div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="200" style="margin-top: 50px;">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Sebagai freelancer, saya pikir tidak mungkin punya rumah. Ternyata dengan cicilan 1 juta, saya bisa punya aset dan dapat motor gratis. Fasilitasnya juga keren banget!"
+                    </div>
+                    <div class="testimonial-author">- Rizal, Freelancer Digital</div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="400" style="margin-top: 50px;">
+                    <div class="video-container">
+                        <iframe src="https://player.vimeo.com/video/1082434313?h=c42ec80398&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Testimonial KMR"></iframe>
+                    </div>
+                    <div class="testimonial-author">- Keluarga Surya, Pasangan Muda</div>
                 </div>
             </div>
         </div>
@@ -873,23 +1378,41 @@
     <!-- House Tour Section -->
     <section class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
                 <h2>VIDEO TIPE STANDARD 30/60</h2>
                 <p>Lihat langsung kondisi rumah yang akan Anda dapatkan</p>
             </div>
             
-            <div class="video-container">
+            <div class="video-container" data-aos="fade-up">
                 <iframe src="https://player.vimeo.com/video/1082433441?h=bd7abf583a&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Review Tipe Rumah Standart 1"></iframe>
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
-                <div class="video-container">
+                <div class="video-container" data-aos="fade-up" data-aos-delay="200">
                     <iframe src="https://player.vimeo.com/video/1082436758?h=c5de10fe5a&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="POV Tipe Standart"></iframe>
                 </div>
                 
-                <div class="video-container">
+                <div class="video-container" data-aos="fade-up" data-aos-delay="400">
                     <iframe src="https://player.vimeo.com/video/1082439035?h=2c491b47ee&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Video POV Tipe Standart 2"></iframe>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Akad Section -->
+    <section class="section" style="background: var(--hijau-muda);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>PROSES AKAD SYARIAH</h2>
+                <p>Transaksi aman dan sesuai syariat Islam</p>
+            </div>
+            
+            <div class="video-container" data-aos="fade-up">
+                <iframe src="https://player.vimeo.com/video/1082438977?h=481792afd5&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Video Akad"></iframe>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;" data-aos="fade-up">
+                <a href="#form" class="btn btn-primary"><i class="fas fa-handshake"></i> Jadwalkan Akad Sekarang</a>
             </div>
         </div>
     </section>
@@ -897,10 +1420,10 @@
     <!-- Countdown Section -->
     <section class="countdown-section">
         <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">PROMO TERBATAS!</h2>
-            <p style="font-size: 1.5rem; max-width: 800px; margin: 0 auto 30px;">Booking sebelum waktu habis dan dapatkan motor listrik gratis setelah angsuran ke-6</p>
+            <h2 class="countdown-title" data-aos="fade-up">PROMO TERBATAS!</h2>
+            <p class="countdown-subtitle" data-aos="fade-up" data-aos-delay="100">Booking sebelum waktu habis dan dapatkan motor listrik gratis setelah angsuran ke-6</p>
             
-            <div id="countdown">
+            <div id="countdown" data-aos="fade-up" data-aos-delay="200">
                 <div class="countdown-box">
                     <div class="countdown-value" id="days">00</div>
                     <div class="countdown-label">Hari</div>
@@ -919,9 +1442,9 @@
                 </div>
             </div>
             
-            <a href="#form" class="btn" style="background: var(--emas); color: var(--hitam); font-size: 1.2rem; padding: 18px 40px;"><i class="fab fa-whatsapp"></i> BOOKING SEKARANG</a>
+            <a href="#form" class="btn" style="background: var(--emas); color: var(--hitam); font-size: 1.2rem; padding: 18px 40px;" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-whatsapp"></i> BOOKING SEKARANG</a>
             
-            <div style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+            <div class="countdown-note" data-aos="fade-up" data-aos-delay="400">
                 <i class="fas fa-info-circle"></i> Kuota terbatas hanya untuk 50 unit pertama
             </div>
         </div>
@@ -930,7 +1453,7 @@
     <!-- Form Section -->
     <section class="section" id="form">
         <div class="container">
-            <div class="lead-form">
+            <div class="lead-form" data-aos="fade-up">
                 <div class="form-title">
                     <h3>FORM PENDAFTARAN</h3>
                     <p>Isi data berikut untuk mendapatkan info lengkap via WhatsApp</p>
@@ -950,4 +1473,199 @@
                     <div class="form-group">
                         <label for="job">Pekerjaan</label>
                         <select id="job" required>
-                            <option value="">
+                            <option value="" disabled selected>Pilih Pekerjaan</option>
+                            <option value="PNS">PNS</option>
+                            <option value="Karyawan Swasta">Karyawan Swasta</option>
+                            <option value="Wiraswasta">Wiraswasta</option>
+                            <option value="Freelancer">Freelancer</option>
+                            <option value="Mahasiswa">Mahasiswa</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">
+                        <i class="fab fa-whatsapp"></i> KIRIM SEKARANG
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo" data-aos="fade-up">
+                <img src="https://i.imgur.com/rb9n5Ge.png" alt="Kertamulya Residence">
+            </div>
+            
+            <div class="footer-social" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://www.instagram.com/kertamulyaresidence/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/628977771080" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+            
+            <div class="footer-contact" data-aos="fade-up" data-aos-delay="200">
+                <a href="tel:+628977771080"><i class="fas fa-phone"></i> +62 897-7771-080</a>
+                <a href="mailto:info@kertamulya.com"><i class="fas fa-envelope"></i> info@kertamulya.com</a>
+            </div>
+            
+            <div class="copyright" data-aos="fade-up" data-aos-delay="300">
+                &copy; 2025 BimuliaLand - Taufik Marie. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Main JavaScript -->
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 3); // 3 days from now
+            
+            const now = new Date().getTime();
+            const distance = endDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = Math.floor(hours).toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = Math.floor(minutes).toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = Math.floor(seconds).toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = '<div style="font-size: 2rem; font-weight: 700;">PROMO TELAH BERAKHIR!</div>';
+            }
+        }
+        
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Fake Notifications
+        const notifications = [
+            {
+                name: "Budi Santoso",
+                message: "Baru saja booking unit tipe 30/60!",
+                time: "2 menit lalu"
+            },
+            {
+                name: "Siti Aminah",
+                message: "Telah melakukan pembayaran DP 0%",
+                time: "15 menit lalu"
+            },
+            {
+                name: "Agus Setiawan",
+                message: "Mendapatkan motor listrik gratis!",
+                time: "1 jam lalu"
+            },
+            {
+                name: "PT. Bina Sejahtera",
+                message: "Membeli 5 unit untuk karyawan",
+                time: "3 jam lalu"
+            }
+        ];
+        
+        function showNotification() {
+            const notificationContainer = document.getElementById('notificationContainer');
+            const randomNotif = notifications[Math.floor(Math.random() * notifications.length)];
+            
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <div class="notification-header">
+                    <i class="fas fa-home"></i>
+                    <span class="notification-name">${randomNotif.name}</span>
+                    <span class="notification-time">${randomNotif.time}</span>
+                </div>
+                <div>${randomNotif.message}</div>
+            `;
+            
+            notificationContainer.appendChild(notification);
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+        
+        // Show first notification after 3 seconds
+        setTimeout(showNotification, 3000);
+        
+        // Show random notifications every 8-15 seconds
+        setInterval(showNotification, Math.floor(Math.random() * 7000) + 8000);
+        
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const job = document.getElementById('job').value;
+            
+            // Send to WhatsApp
+            const message = `Halo, saya ${name} (${job}) tertarik dengan Kertamulya Residence. Mohon info lebih lanjut.`;
+            const whatsappUrl = `https://wa.me/628977771080?text=${encodeURIComponent(message)}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Show success notification
+            const notificationContainer = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <div class="notification-header">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="notification-name">Form Terkirim!</span>
+                    <span class="notification-time">baru saja</span>
+                </div>
+                <div>Tim kami akan segera menghubungi Anda via WhatsApp</div>
+            `;
+            
+            notificationContainer.appendChild(notification);
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
