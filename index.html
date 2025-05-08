@@ -3,120 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DP 0%! Rumah Syariah + Motor Listrik Gratis di Kuningan | Kertamulya Residence</title>
-    <meta name="description" content="Investasi properti syariah terbaik di Kuningan. DP 0%, cicilan Rp1 juta/bulan, dapatkan motor listrik gratis! Lokasi strategis di kota transit wisata.">
-    <meta name="keywords" content="rumah syariah kuningan, investasi properti 2025, cicilan rumah 1 juta, perumahan islami, hunian dekat wisata">
-    <meta property="og:title" content="DP 0%! Rumah Syariah + Motor Listrik Gratis di Kuningan">
-    <meta property="og:description" content="Booking Fee Rp500rb saja! Cicilan Rp1 juta/bulan. Fasilitas Islami lengkap.">
-    <meta property="og:image" content="https://i.imgur.com/EimqXek.jpeg">
-    <meta property="og:url" content="https://kertamulyaresidence.com">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
+    <title>🔥 DP 0% Rumah Syariah Kuningan + Motor Gratis | Cicilan 1 Juta/Bulan</title>
+    <meta name="description" content="Anak Muda Bisa Punya Rumah! DP 0%, Cicilan Rp1 Juta/Bulan. Dapatkan Motor Listrik Setelah Angsuran ke-6. Lokasi Strategis Kota Transit Wisata Kuningan.">
+    <!-- Font Awesome 6.4.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ===== GLOBAL RESET & VARIABLES ===== */
+        /* ===== VARIABEL & RESET ===== */
         :root {
-            --gold: #FFD700;
-            --islamic-green: #228B22;
-            --sky-blue: #00BFFF;
-            --white: #FFFFFF;
-            --black: #111111;
-            --urgent-red: #FF3030;
-            --dark-green: #006400;
+            --hijau: #2ecc71;
+            --hijau-tua: #27ae60;
+            --emas: #f1c40f;
+            --merah: #e74c3c;
+            --biru: #3498db;
+            --hitam: #2c3e50;
+            --putih: #ffffff;
+            --abu: #ecf0f1;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
-            background-color: #f8f8f8;
-            color: var(--black);
+            background-color: var(--abu);
+            color: var(--hitam);
             overflow-x: hidden;
             line-height: 1.6;
         }
         
-        /* ===== ANIMATION CLASSES ===== */
+        /* ===== ANIMASI ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
         }
         
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
         
         @keyframes glow {
-            0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-            100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+            0% { text-shadow: 0 0 10px var(--emas); }
+            100% { text-shadow: 0 0 20px var(--hijau); }
         }
         
-        @keyframes slideIn {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
-        /* ===== HEADER SECTION ===== */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.imgur.com/EimqXek.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            position: relative;
+        /* ===== UTILITY CLASSES ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
         }
         
-        .hero-content {
-            max-width: 1200px;
-            animation: slideIn 1s ease-out;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-        }
-        
-        .badge {
-            display: inline-block;
-            background-color: var(--urgent-red);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            margin: 20px 0;
-            animation: pulse 1.5s infinite;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* ===== BUTTON STYLES ===== */
         .btn {
             display: inline-block;
             padding: 18px 36px;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 700;
             text-decoration: none;
-            transition: all 0.3s ease;
-            margin: 10px;
+            transition: all 0.3s;
             text-align: center;
             cursor: pointer;
             border: none;
@@ -125,30 +81,147 @@
         }
         
         .btn-primary {
-            background: linear-gradient(45deg, var(--gold), #FFA500);
-            color: var(--black);
-            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
+            background: linear-gradient(45deg, var(--hijau), var(--hijau-tua));
+            color: var(--putih);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
         }
         
         .btn-primary:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.6);
-            animation: glow 1.5s infinite alternate;
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.6);
+            animation: pulse 1.5s infinite;
         }
         
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
+        .section {
+            padding: 100px 0;
+            position: relative;
         }
         
-        .btn-secondary:hover {
-            background-color: var(--white);
-            color: var(--black);
-            transform: translateY(-5px);
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
         }
         
-        /* ===== STICKY WHATSAPP BUTTON ===== */
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--emas), var(--hijau));
+            border-radius: 2px;
+        }
+        
+        /* ===== HEADER HERO ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.imgur.com/EimqXek.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--putih);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            animation: glow 2s infinite alternate;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background-color: var(--merah);
+            color: var(--putih);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .price-comparison {
+            display: inline-flex;
+            align-items: center;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.5);
+            padding: 15px 25px;
+            border-radius: 50px;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            font-size: 1.8rem;
+            color: #ccc;
+            margin-right: 15px;
+        }
+        
+        .new-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--emas);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        /* ===== NOTIFICATION ===== */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--hitam);
+            color: var(--putih);
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: none;
+            max-width: 350px;
+            animation: fadeIn 0.5s forwards;
+        }
+        
+        .notification::before {
+            content: "🔥";
+            margin-right: 10px;
+        }
+        
+        /* ===== WHATSAPP FLOAT ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -169,123 +242,15 @@
             animation: float 3s ease-in-out infinite;
         }
         
-        /* ===== NOTIFICATION SYSTEM ===== */
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--black);
-            color: var(--white);
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            display: none;
-            max-width: 350px;
-            animation: slideIn 0.5s forwards;
-        }
-        
-        .notification::before {
-            content: "🔥";
-            margin-right: 10px;
-        }
-        
-        /* ===== SECTION STYLES ===== */
-        .section {
-            padding: 100px 20px;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--islamic-green);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gold), var(--islamic-green));
-            border-radius: 2px;
-        }
-        
-        /* ===== ABOUT SECTION ===== */
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--dark-green);
-            line-height: 1.3;
-        }
-        
-        .highlight {
-            background: linear-gradient(120deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1));
-            padding: 0 5px;
-            border-radius: 3px;
-            font-weight: bold;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            transition: all 0.5s ease;
-        }
-        
-        .about-image:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* ===== VIDEO SECTION ===== */
+        /* ===== VIDEO CONTAINER ===== */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            max-width: 1000px;
-            margin: 0 auto;
             border-radius: 15px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            margin: 40px auto;
         }
         
         .video-container iframe {
@@ -302,22 +267,20 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            margin-top: 40px;
         }
         
         .feature-card {
-            background-color: var(--white);
+            background-color: var(--putih);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            position: relative;
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
         
         .feature-image {
@@ -344,29 +307,117 @@
         .feature-content h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--islamic-green);
+            color: var(--hijau-tua);
+        }
+        
+        /* ===== COMPARISON SECTION ===== */
+        .comparison {
+            background: linear-gradient(135deg, var(--hitam), #34495e);
+            color: var(--putih);
+            padding: 80px 0;
+        }
+        
+        .comparison-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .comparison-card {
+            background: var(--putih);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            color: var(--hitam);
+        }
+        
+        .comparison-card.best {
+            background: linear-gradient(135deg, var(--hijau), var(--hijau-tua));
+            color: var(--putih);
+            transform: scale(1.05);
+            z-index: 1;
+            box-shadow: 0 20px 40px rgba(46, 204, 113, 0.3);
+        }
+        
+        .best-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--emas);
+            color: var(--hitam);
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+        
+        .comparison-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .comparison-features li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .comparison-features li::before {
+            content: "✓";
+            color: var(--hijau);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .comparison-card.best .comparison-features li::before {
+            color: var(--emas);
         }
         
         /* ===== TESTIMONIAL SECTION ===== */
         .testimonials {
-            background: linear-gradient(135deg, var(--islamic-green), var(--dark-green));
-            color: var(--white);
+            background: url('https://imgur.com/lE2ropc') center/cover;
+            position: relative;
+            padding: 100px 0;
+        }
+        
+        .testimonials::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
         }
         
         .testimonial-slider {
             max-width: 1000px;
             margin: 0 auto;
             position: relative;
-            overflow: hidden;
+            z-index: 1;
         }
         
         .testimonial {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 40px;
             border-radius: 15px;
             margin: 20px;
             text-align: center;
-            backdrop-filter: blur(5px);
+            color: var(--putih);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .testimonial-avatar {
@@ -375,12 +426,13 @@
             border-radius: 50%;
             object-fit: cover;
             margin: 0 auto 20px;
-            border: 3px solid var(--gold);
+            border: 3px solid var(--emas);
         }
         
         .testimonial-text {
             font-style: italic;
             margin-bottom: 20px;
+            font-size: 1.1rem;
             position: relative;
         }
         
@@ -388,165 +440,18 @@
         .testimonial-text::after {
             content: '"';
             font-size: 2rem;
-            color: var(--gold);
+            color: var(--emas);
             opacity: 0.5;
         }
         
         .testimonial-author {
-            font-weight: bold;
-            color: var(--gold);
-        }
-        
-        /* ===== GALLERY SECTION ===== */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .gallery-item {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        /* ===== MODAL FOR IMAGE ZOOM ===== */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            overflow: auto;
-        }
-        
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: zoom 0.3s;
-        }
-        
-        @keyframes zoom {
-            from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
-            to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-        }
-        
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: var(--white);
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        /* ===== PRICING SECTION ===== */
-        .pricing-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .pricing-card {
-            background-color: var(--white);
-            border-radius: 15px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            flex: 1;
-            min-width: 300px;
-            max-width: 350px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .pricing-card.popular {
-            border: 3px solid var(--gold);
-            position: relative;
-        }
-        
-        .popular-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: var(--gold);
-            color: var(--black);
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-        
-        .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--islamic-green);
-            margin: 20px 0;
-        }
-        
-        .price span {
-            font-size: 1rem;
-            color: #666;
-        }
-        
-        .price-features {
-            list-style: none;
-            margin: 30px 0;
-        }
-        
-        .price-features li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .price-features li::before {
-            content: "✓";
-            color: var(--islamic-green);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
+            font-weight: 700;
+            color: var(--emas);
         }
         
         /* ===== FORM SECTION ===== */
-        .form-container {
-            background-color: var(--white);
+        .lead-form {
+            background: var(--putih);
             border-radius: 15px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
             max-width: 600px;
@@ -556,14 +461,14 @@
             overflow: hidden;
         }
         
-        .form-container::before {
+        .lead-form::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 10px;
-            background: linear-gradient(90deg, var(--gold), var(--islamic-green));
+            background: linear-gradient(90deg, var(--emas), var(--hijau));
         }
         
         .form-title {
@@ -573,7 +478,7 @@
         
         .form-title h3 {
             font-size: 1.8rem;
-            color: var(--islamic-green);
+            color: var(--hijau-tua);
             margin-bottom: 10px;
         }
         
@@ -585,139 +490,90 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--black);
+            color: var(--hitam);
         }
         
         .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-group select {
             width: 100%;
             padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
             font-size: 1rem;
             transition: all 0.3s ease;
         }
         
         .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--islamic-green);
-            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
+        .form-group select:focus {
+            border-color: var(--hijau);
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
             outline: none;
         }
         
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(45deg, var(--islamic-green), var(--sky-blue));
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
+        /* ===== COUNTDOWN SECTION ===== */
+        .countdown-section {
+            background: linear-gradient(135deg, var(--merah), #c0392b);
+            color: var(--putih);
+            text-align: center;
+            padding: 80px 0;
         }
         
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* ===== FAQ SECTION ===== */
-        .faq-container {
+        .countdown-container {
             max-width: 800px;
             margin: 0 auto;
         }
         
-        .faq-item {
-            margin-bottom: 15px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .faq-item:hover {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .faq-question {
-            background-color: var(--white);
-            color: var(--black);
-            padding: 20px;
-            cursor: pointer;
+        #countdown {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
         }
         
-        .faq-question:hover {
-            background-color: #f5f5f5;
-        }
-        
-        .faq-question::after {
-            content: "+";
-            font-size: 1.5rem;
-            color: var(--islamic-green);
-        }
-        
-        .faq-item.active .faq-question::after {
-            content: "-";
-        }
-        
-        .faq-answer {
-            background-color: #f9f9f9;
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-        
-        .faq-item.active .faq-answer {
+        .countdown-box {
+            background: rgba(0, 0, 0, 0.3);
             padding: 20px;
-            max-height: 500px;
+            border-radius: 10px;
+            min-width: 100px;
+        }
+        
+        .countdown-value {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            opacity: 0.8;
         }
         
         /* ===== FOOTER ===== */
         footer {
-            background-color: var(--black);
-            color: var(--white);
-            padding: 60px 20px;
+            background: var(--hitam);
+            color: var(--putih);
+            padding: 60px 0 30px;
             text-align: center;
         }
         
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        .footer-logo {
+            margin-bottom: 30px;
         }
         
-        .footer-logo {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--gold);
+        .footer-logo img {
+            max-width: 200px;
         }
         
         .footer-contact {
             margin-bottom: 30px;
         }
         
-        .footer-contact p {
-            margin-bottom: 10px;
-        }
-        
         .footer-contact a {
-            color: var(--gold);
+            color: var(--emas);
             text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .footer-contact a:hover {
-            text-decoration: underline;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin: 10px;
         }
         
         .copyright {
@@ -729,6 +585,16 @@
         }
         
         /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2rem;
@@ -739,22 +605,20 @@
             }
             
             .section {
-                padding: 60px 20px;
+                padding: 60px 0;
             }
             
             .section-title h2 {
                 font-size: 2rem;
             }
             
-            .btn {
-                padding: 15px 25px;
-                font-size: 1rem;
-                width: 100%;
-                margin: 5px 0;
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            .form-container {
-                padding: 30px 20px;
+            .btn {
+                width: 100%;
             }
             
             .whatsapp-float {
@@ -764,192 +628,130 @@
                 bottom: 20px;
                 right: 20px;
             }
+            
+            .comparison-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-card.best {
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .price-comparison {
+                flex-direction: column;
+            }
+            
+            .old-price {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            
+            #countdown {
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header class="hero">
-        <div class="hero-content">
-            <h1>INVESTASI PROPERTI SYARIAH TERBAIK 2025 DI KUNINGAN</h1>
-            <p>DP 0% + Motor Listrik Gratis • Cicilan Rp1 Juta/Bulan • Lokasi Strategis Kota Transit Wisata</p>
-            <div class="badge">Promo Terbatas!</div>
-            <div class="cta-buttons">
-                <a href="#pricing" class="btn btn-primary">LIHAT HARGA SEKARANG</a>
-                <a href="#form" class="btn btn-secondary">AMBIL UNIT SEKARANG</a>
+        <div class="container">
+            <div class="hero-content">
+                <img src="https://imgur.com/rb9n5Ge" alt="Kertamulya Residence" style="max-width: 200px; margin-bottom: 30px;">
+                <h1>ANAK MUDA BISA PUNYA RUMAH!<br><span style="color: var(--emas);">DP 0%</span> + Motor Listrik GRATIS</h1>
+                <p>Cicilan <span style="font-weight: 700;">Rp1 Juta/Bulan</span> - Lokasi Strategis Kota Transit Wisata Kuningan</p>
+                
+                <div class="price-comparison">
+                    <div class="old-price">Rp185.000.000</div>
+                    <div class="new-price">Rp168.000.000</div>
+                </div>
+                
+                <div class="price-tag">PROMO TERBATAS 2025</div>
+                
+                <div class="cta-buttons">
+                    <a href="#form" class="btn btn-primary"><i class="fab fa-whatsapp"></i> BOOKING SEKARANG</a>
+                    <a href="#fasilitas" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;"><i class="fas fa-info-circle"></i> LIHAT FASILITAS</a>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <div class="testimonial">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimoni" class="testimonial-avatar">
+                        <div class="testimonial-text">
+                            "Gak nyangka di usia 25 udah punya rumah! Cicilan lebih murah dari kos, fasilitasnya keren banget."
+                        </div>
+                        <div class="testimonial-author">- Andi, Freelancer Digital</div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/628977771080?text=Saya%20tertarik%20dengan%20Kertamulya%20Residence%20dan%20mau%20info%20lebih%20lanjut" class="whatsapp-float" target="_blank">
-        <span style="font-size: 1.5rem;">💬</span>
+    <a href="https://wa.me/628977771080?text=Saya%20tertarik%20Kertamulya%20Residence%20dan%20mau%20info%20lebih%20lanjut" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Notification -->
     <div class="notification" id="notification"></div>
 
-    <!-- About Section -->
+    <!-- Video Intro Section -->
     <section class="section">
-        <div class="section-title">
-            <h2>KENAPA HARUS KERTAMULYA RESIDENCE?</h2>
-        </div>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Perumahan Islami Pertama & Satu-satunya di Kuningan</h3>
-                <p>Kertamulya Residence bukan sekadar hunian biasa. Kami menghadirkan <span class="highlight">konsep Islamic Green Living pertama di Kuningan</span> yang mengintegrasikan nilai-nilai Islam dalam setiap aspek kehidupan.</p>
-                <p>Dengan lokasi strategis di jantung kota transit wisata Kuningan, properti ini menjadi <span class="highlight">investasi masa depan yang menjanjikan</span>. Hanya 5 menit ke Tol Kuningan dan dikelilingi oleh objek wisata terkenal:</p>
-                <ul style="margin: 20px 0; padding-left: 20px;">
-                    <li>Telaga Biru Cicerem (3 km)</li>
-                    <li>Curug Putri Palutungan (5 km)</li>
-                    <li>Taman Nasional Gunung Ciremai (15 km)</li>
-                </ul>
-                <p><strong>Spesial 2025:</strong> Booking fee hanya <span class="highlight">Rp500.000</span> dan dapatkan <span class="highlight">motor listrik gratis</span> untuk 100 pembeli pertama!</p>
+        <div class="container">
+            <div class="section-title">
+                <h2>KENAPA HARUS KERTAMULYA RESIDENCE?</h2>
             </div>
-            <div class="about-image">
-                <img src="https://i.imgur.com/50dsrpB.png" alt="Masjid Kertamulya Residence">
+            
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/1082437245?h=207debc4dc&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Video Intro KMR"></iframe>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#form" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Saya Mau Info Lebih Lanjut</a>
             </div>
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section class="section" style="background-color: #f0f8ff;">
-        <div class="section-title">
-            <h2>VIDEO PROFIL KERTAMULYA RESIDENCE</h2>
-        </div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/6G_1fBYL18k?si=hksogSZiklBTXq5o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section">
-        <div class="section-title">
-            <h2>FASILITAS PREMIUM ISLAMI</h2>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-image" onclick="openModal('https://i.imgur.com/AAHKvFo.png')">
-                    <img src="https://i.imgur.com/AAHKvFo.png" alt="One Gate System">
+    <!-- Facilities Section -->
+    <section class="section" id="fasilitas">
+        <div class="container">
+            <div class="section-title">
+                <h2>FASILITAS PREMIUM</h2>
+                <p>Konsep Islamic Green Living Pertama di Kuningan</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Fasilitas 1 -->
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://imgur.com/QJfJq2l" alt="Masjid Al Fawwaz">
+                    </div>
+                    <div class="feature-content">
+                        <h3><i class="fas fa-mosque"></i> Masjid Al Fawwaz</h3>
+                        <p>Kapasitas 300 jamaah dengan desain modern dan tempat wudhu nyaman</p>
+                    </div>
                 </div>
-                <div class="feature-content">
-                    <h3>One Gate System 24/7</h3>
-                    <p>Sistem keamanan terpadu dengan akses tunggal, CCTV cerdas, dan patroli keamanan 24 jam untuk kenyamanan maksimal.</p>
+                
+                <!-- Fasilitas 2 -->
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://imgur.com/Fc4wxey" alt="Saung Tahfidz">
+                    </div>
+                    <div class="feature-content">
+                        <h3><i class="fas fa-book-quran"></i> Saung Tahfidz</h3>
+                        <p>Tempat menghafal Al-Qur'an dengan metode modern dan guru bersertifikat</p>
+                    </div>
                 </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-image" onclick="openModal('https://i.imgur.com/774IQMD.png')">
-                    <img src="https://i.imgur.com/774IQMD.png" alt="Saung Tahfidz">
-                </div>
-                <div class="feature-content">
-                    <h3>Saung Tahfidz</h3>
-                    <p>Area khusus untuk menghafal Al-Qur'an dengan metode modern dan guru tahfidz bersertifikat.</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-image" onclick="openModal('https://i.imgur.com/m5BNXgh.png')">
-                    <img src="https://i.imgur.com/m5BNXgh.png" alt="Sunnah Sport">
-                </div>
-                <div class="feature-content">
-                    <h3>Sunnah Sport Area</h3>
-                    <p>Lapangan panahan, kolam renang khusus muslimah, dan fasilitas olahraga sesuai sunnah Nabi.</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-image" onclick="openModal('https://imgur.com/qV7lf7s')">
-                    <img src="https://imgur.com/qV7lf7s" alt="Community Center">
-                </div>
-                <div class="feature-content">
-                    <h3>Community Center</h3>
-                    <p>Tempat berkumpul dan bersosialisasi antar penghuni dengan konsep islami dan fasilitas lengkap.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Section -->
-    <section class="section testimonials">
-        <div class="section-title">
-            <h2 style="color: var(--white);">APA KATA MEREKA?</h2>
-        </div>
-        <div class="testimonial-slider">
-            <div class="testimonial">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial" class="testimonial-avatar">
-                <div class="testimonial-text">
-                    "Sebagai investor properti, saya melihat potensi besar di Kertamulya Residence. Lokasi strategis di kota transit wisata membuat nilai properti pasti naik. Fasilitas islaminya juga jadi nilai tambah besar."
-                </div>
-                <div class="testimonial-author">- Bapak Andi, Investor dari Jakarta</div>
-            </div>
-            <div class="testimonial">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonial" class="testimonial-avatar">
-                <div class="testimonial-text">
-                    "Saya memilih Kertamulya Residence karena konsep islaminya. Anak-anak bisa tumbuh di lingkungan yang baik dengan fasilitas tahfidz dan olahraga sunnah. Harga cicilannya juga sangat terjangkau."
-                </div>
-                <div class="testimonial-author">- Ibu Siti, Keluarga Muda dari Bandung</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Testimonial Section -->
-    <section class="section">
-        <div class="section-title">
-            <h2>TESTIMONI ASLI PENGHUNI</h2>
-        </div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/erR1mNlCHl0?si=j_cw3NUSABRFCNmD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section">
-        <div class="section-title">
-            <h2>GALERI RUMAH TIPE STANDAR 30/60</h2>
-        </div>
-        <div class="gallery">
-            <div class="gallery-item" onclick="openModal('https://i.imgur.com/vv4200Y.jpeg')">
-                <img src="https://i.imgur.com/vv4200Y.jpeg" alt="Rumah Kertamulya Residence">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://i.imgur.com/JKpZ6YT.jpeg')">
-                <img src="https://i.imgur.com/JKpZ6YT.jpeg" alt="Rumah Kertamulya Residence">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://i.imgur.com/NXt5lhy.jpeg')">
-                <img src="https://i.imgur.com/NXt5lhy.jpeg" alt="Rumah Kertamulya Residence">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://i.imgur.com/yCkpfGP.jpeg')">
-                <img src="https://i.imgur.com/yCkpfGP.jpeg" alt="Rumah Kertamulya Residence">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://i.imgur.com/kN5ddyp.jpeg')">
-                <img src="https://i.imgur.com/kN5ddyp.jpeg" alt="Rumah Kertamulya Residence">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://i.imgur.com/mF6vSAW.jpeg')">
-                <img src="https://i.imgur.com/mF6vSAW.jpeg" alt="Rumah Kertamulya Residence">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://i.imgur.com/1kPFyfK.jpeg')">
-                <img src="https://i.imgur.com/1kPFyfK.jpeg" alt="Rumah Kertamulya Residence">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://i.imgur.com/igMpGiN.jpeg')">
-                <img src="https://i.imgur.com/igMpGiN.jpeg" alt="Spesifikasi Bangunan">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://i.imgur.com/jkniEss.jpeg')">
-                <img src="https://i.imgur.com/jkniEss.jpeg" alt="Denah Rumah">
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="section" id="pricing">
-        <div class="section-title">
-            <h2>HARGA & PROMO SPESIAL</h2>
-        </div>
-        <div class="pricing-cards">
-            <div class="pricing-card">
-                <h3>Type 30/60</h3>
-                <div class="price">Rp185<span> Juta</span></div>
-                <ul class="price-features">
-                    <li>Luas Tanah 60m²</li>
-                    <li>Bangunan 30m²</li>
-                    <li>2 Kamar Tidur</li>
-                    <li>1 Kamar Mandi</li>
-                    <li>Ruang Tamu & Keluarga</li>
-                </ul>
-                <a href="#form" class="btn btn-primary">MINAT UNIT
+                
+                <!-- Fasilitas 3 -->
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://imgur.com/QwwyO9T" alt="Sunnah Sport">
+                    </div>
+                    <div class="feature-content">
+                        <h3><i
